@@ -377,6 +377,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   .scrim{position:fixed;left:0;right:0;top:64px;bottom:0;z-index:30;background:rgba(42,26,26,.38);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
   body.menu-open .scrim{opacity:1;visibility:visible;transition-delay:0s}
   body.menu-open{overflow:hidden}
+  header.site{transition:background-color .25s ease,border-color .25s ease}
+  body.menu-open header.site{background:var(--bg);border-bottom-color:transparent}
   @media (prefers-reduced-motion:reduce){
     header.site nav,header.site nav li,.burger span,.scrim{transition:none!important;transition-delay:0s!important}
     header.site nav{clip-path:none}
