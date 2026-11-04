@@ -46,20 +46,24 @@ section[id]{scroll-margin-top:96px}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;min-height:84px}
 .logo img{width:150px;height:auto}
 header.site nav ul{display:flex;gap:4px;list-style:none}
-header.site nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.05em;text-decoration:none;color:var(--ink)}
+header.site nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.05em;text-decoration:none;color:var(--ink);transition:background-color .3s ease,color .3s ease}
 header.site nav a:hover{background:var(--blush)}
 header.site nav a[aria-current="page"]{background:var(--action);color:#fff}
 .langli{margin-left:10px}
 .lang{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:48px;min-height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--action-hover);background:transparent;color:var(--action-hover);font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.06em;cursor:pointer}
 .lang:hover{background:#fff}
+.lang{transition:background-color .3s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.lang:hover{transform:translateY(-2px)}
+.lang:active{transform:translateY(0) scale(.985);transition-duration:.12s}
 .lang svg{width:18px;height:18px;flex:none}
 .burger{display:none;min-width:44px;min-height:44px;border:0;background:transparent;border-radius:12px;cursor:pointer;color:var(--ink)}
 .burger span{display:block;width:24px;height:2px;margin:5px auto;background:currentColor;border-radius:2px;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .2s ease;transform-origin:center}
 .burger{transition:color .25s ease}
 
 /* knappar */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:999px;border:2px solid transparent;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:999px;border:2px solid transparent;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .45s cubic-bezier(.2,.8,.2,1);will-change:transform}
 .btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.985);transition-duration:.12s}
 .btn.primary{background:var(--action);color:#fff}
 .btn.primary:hover{background:var(--action-hover)}
 .btn.outline{background:transparent;color:var(--action-hover);border-color:var(--action-hover)}
@@ -336,7 +340,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   .btn.big{width:100%;padding-inline:20px;font-size:18px}
   .actions .btn{flex:1 1 180px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.lang{transition:none}.btn:hover,.btn:active,.lang:hover,.lang:active{transform:none}}
 </style>
 </head>
 <body>
