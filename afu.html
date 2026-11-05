@@ -195,11 +195,13 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .team-card p{margin-top:20px;font-size:16.5px}
 .visit-info h2,.background h2{margin-bottom:24px}
 .visit-info .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.steps2{list-style:none;counter-reset:s;display:grid;gap:22px;margin-bottom:28px}
-.steps2 li{counter-increment:s;display:grid;grid-template-columns:42px 1fr;gap:16px}
-.steps2 li:before{content:counter(s);width:42px;height:42px;border-radius:50%;background:var(--action);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:18px}
-.steps2 h3{font-size:22px;font-weight:600;margin-bottom:4px;line-height:1.3}
-.steps2 p{font-size:17px}
+.info-list{list-style:none;display:grid;margin-bottom:28px}
+.info-list li{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+.info-list li:first-child{border-top:0;padding-top:4px}
+.info-list .ico{width:48px;height:48px;border-radius:50%;background:var(--rose);color:var(--action);display:grid;place-items:center}
+.info-list .ico svg{width:24px;height:24px}
+.info-list h3{font-size:22px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.info-list p{font-size:17px}
 .note{background:var(--green);color:var(--green-ink);border-radius:18px;padding:18px 22px;font-weight:600;max-width:34em}
 .visit-info figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:var(--radius)}
 .background{background:var(--rose)}
@@ -331,11 +333,11 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   <div class="wrap">
     <div>
       <h2 id="infor">Inför <b>ditt besök</b></h2>
-      <ol class="steps2">
-        <li><div><h3>Första besöket</h3><p>Första besöket är alltid till en av våra specialistläkare.</p></div></li>
-        <li><div><h3>Du kommer själv</h3><p>Bedömningen sker enskilt med dig som är kallad. Det finns möjlighet för medföljande sällskap att vänta i väntrummet.</p></div></li>
-        <li><div><h3>Ta med glasögon</h3><p>Om du använder glasögon, var vänlig ta med dem vid alla dina besök. Det kan innebära att du ska läsa skriven text, skriva för hand och/eller på dator.</p></div></li>
-      </ol>
+      <ul class="info-list">
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg></span><div><h3>Första besöket</h3><p>Första besöket är alltid till en av våra specialistläkare.</p></div></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><div><h3>Du kommer själv</h3><p>Bedömningen sker enskilt med dig som är kallad. Det finns möjlighet för medföljande sällskap att vänta i väntrummet.</p></div></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M3 14l1.5-6M21 14l-1.5-6"/></svg></span><div><h3>Ta med glasögon</h3><p>Om du använder glasögon, var vänlig ta med dem vid alla dina besök. Det kan innebära att du ska läsa skriven text, skriva för hand och/eller på dator.</p></div></li>
+      </ul>
       <p class="note">Frågor kring själva utredningen besvaras av din handläggare på Försäkringskassan.</p>
     </div>
     <figure>
