@@ -241,9 +241,13 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .who h2{margin-bottom:22px}
 .who p+p{margin-top:1em}
 .who .after{margin-top:24px;font-size:17px}
-.tiles{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.tiles li{background:#fff;border-radius:20px;padding:22px 20px;font-weight:500;font-size:17px;line-height:1.4;display:flex;flex-direction:column;gap:14px}
-.tiles svg{width:30px;height:30px;color:var(--action)}
+.info-list{list-style:none;display:grid}
+.info-list li{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center;padding:20px 0;border-top:1px solid rgba(185,58,39,.22)}
+.info-list li:first-child{border-top:0;padding-top:4px}
+.info-list li:last-child{padding-bottom:4px}
+.info-list .ico{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--action);display:grid;place-items:center}
+.info-list .ico svg{width:24px;height:24px}
+.info-list .lbl{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.3}
 .cost .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
 .cost h2{margin-bottom:22px}
 .stats2{display:grid;grid-template-columns:1fr;gap:16px}
@@ -466,11 +470,11 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <p>Här får du möjlighet att tillsammans med en erfaren terapeut arbeta med det som känns svårt, oavsett om det handlar om stress, oro, nedstämdhet eller andra utmaningar.</p>
       <p>Vi möter dig där du är, och tillsammans hittar vi vägen framåt.</p>
     </div>
-    <ul class="tiles" aria-label="Exempel på vad vi arbetar med">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Stress</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Oro</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Nedstämdhet</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Andra utmaningar</li>
+    <ul class="info-list" aria-label="Exempel på vad vi arbetar med">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><span class="lbl">Stress</span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><span class="lbl">Oro</span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><span class="lbl">Nedstämdhet</span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><span class="lbl">Andra utmaningar</span></li>
     </ul>
   </div>
 </section>
