@@ -237,16 +237,13 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .two-col p+p{margin-top:1em}
 .two-col figure img{width:100%;height:auto;aspect-ratio:5/4;max-height:420px;object-fit:cover;object-position:50% 60%;border-radius:var(--radius)}
 .who{background:var(--rose)}
-.who .wrap{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"head ." "body list";column-gap:64px;align-items:start}
-.who h2{grid-area:head}
-.who-body{grid-area:body}
-.who .info-list{grid-area:list}
+.who .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .who h2{margin-bottom:22px}
 .who p+p{margin-top:1em}
 .who .after{margin-top:24px;font-size:17px}
 .info-list{list-style:none;display:grid}
 .info-list li{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center;padding:20px 0;border-top:1px solid rgba(185,58,39,.22)}
-.info-list li:first-child{border-top:0;padding-top:0}
+.info-list li:first-child{border-top:0;padding-top:4px}
 .info-list li:last-child{padding-bottom:4px}
 .info-list .ico{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--action);display:grid;place-items:center}
 .info-list .ico svg{width:24px;height:24px}
@@ -268,9 +265,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .more-info a.btn{background:var(--green-ink);color:#fff}
 .more-info a.btn:hover{background:#142B1C}
 @media (max-width:960px){
-  .two-col .wrap,.cost .wrap,.access .wrap{grid-template-columns:1fr;gap:36px}
-  .who .wrap{grid-template-columns:1fr;grid-template-areas:"head" "body" "list"}
-  .who .info-list{margin-top:28px}
+  .two-col .wrap,.who .wrap,.cost .wrap,.access .wrap{grid-template-columns:1fr;gap:36px}
   .two-col figure{order:-1}
   .kv{grid-template-columns:1fr 1fr}
 }
@@ -470,8 +465,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 <!-- HJÄLP MED -->
 <section class="block who" aria-labelledby="hjalp">
   <div class="wrap">
-    <h2 id="hjalp">Det här kan du få <b>hjälp med</b></h2>
-    <div class="who-body">
+    <div>
+      <h2 id="hjalp">Det här kan du få <b>hjälp med</b></h2>
       <p>Här får du möjlighet att tillsammans med en erfaren terapeut arbeta med det som känns svårt, oavsett om det handlar om stress, oro, nedstämdhet eller andra utmaningar.</p>
       <p>Vi möter dig där du är, och tillsammans hittar vi vägen framåt.</p>
     </div>
