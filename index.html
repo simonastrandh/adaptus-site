@@ -366,7 +366,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     </ul>
     <div class="text">
       <p>Adaptus är ett privatägt vårdföretag. Vi gör utredningar på uppdrag av Försäkringskassan, med Region Skåne som avtalspart.</p>
-      <p>Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.</p>
+      <p>Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.</p>
       <p>Hos oss arbetar flera yrkesgrupper tillsammans. Vi ser hela dig, samarbetar med dig och ger dig tydlig återkoppling.</p>
     </div>
   </div>
@@ -531,7 +531,7 @@ const T = [
  ["Specialistteam","Specialist team"],
  ["läkare, psykologer, fysioterapeuter och arbetsterapeuter","physicians, psychologists, physiotherapists and occupational therapists"],
  ["Adaptus är ett privatägt vårdföretag. Vi gör utredningar på uppdrag av Försäkringskassan, med Region Skåne som avtalspart.","Adaptus is a privately owned healthcare company. We carry out assessments on behalf of Försäkringskassan, with Region Skåne as contracting party."],
- ["Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.","You can get CBT with us in two ways. With a referral: we are approved within Vårdval psykoterapi in Region Skåne, and if you have a referral you pay SEK 200 per session. Without a referral: you book directly with us, with no queue and a short wait. One session costs SEK 1,200."],
+ ["Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.","You can get CBT with us in two ways. With a referral: we are approved within Vårdval psykoterapi in Region Skåne, and if you have a referral you pay SEK 200 per session. Without a referral: you book directly with us, with no queue and a short wait. One session costs SEK 1,200."],
  ["Hos oss arbetar flera yrkesgrupper tillsammans. Vi ser hela dig, samarbetar med dig och ger dig tydlig återkoppling.","At Adaptus, several professions work together. We see the whole you, work with you and give you clear feedback."],
  ["Välkommen till oss","Welcome <b>to our clinic</b>"],
  ["Du träffar oss på vår mottagning i Kristianstad. Ring eller mejla om du undrar över hur det går till.","You meet us at our clinic in Kristianstad. Call or email if you wonder how it works."],
@@ -561,7 +561,7 @@ const A = [
 const META = {sv:{title:document.title,desc:document.querySelector('meta[name=description]').content},
  en:{title:"Adaptus – CBT, assessments and rehabilitation in Kristianstad, Sweden",desc:"Support and treatment when life feels heavy. Adaptus in Kristianstad offers CBT, assessments and rehabilitation with an experienced team in mental health."}};
 const norm=t=>t.replace(/\s+/g,' ').trim();
-const tmap=new Map(T.map(([a,b])=>[a,b])), amap=new Map(A);
+const tmap=new Map(T.map(([a,b])=>[norm(a),b])), amap=new Map(A);
 const nodes=[];
 [...document.body.querySelectorAll('*')].reverse().forEach(el=>{
   if(el.closest('script')||el.querySelector('[data-sv]'))return;
