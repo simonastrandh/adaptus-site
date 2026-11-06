@@ -190,6 +190,12 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .page-head h1{font-size:clamp(40px,5vw,60px);font-weight:500;line-height:1.08;color:var(--ink)}
 .page-head h1 em{display:block;font-style:normal;font-weight:600;color:var(--action-hover)}
 .page-head .lead{font-size:19px;margin:22px 0 0;max-width:32em}
+.page-head .feat{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0 0;max-width:1040px}
+.page-head .feat li{background:#fff;border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center}
+.page-head .feat .ico{width:52px;height:52px;border-radius:50%;background:var(--rose);color:var(--action);display:grid;place-items:center}
+.page-head .feat .ico svg{width:26px;height:26px}
+.page-head .feat strong{display:block;font-family:var(--display);font-weight:600;font-size:21px;line-height:1.25}
+.page-head .feat .sub{display:block;font-size:16px;line-height:1.45;color:var(--muted);margin-top:2px}
 .team-card{background:#fff;border-radius:var(--radius);padding:32px}
 .team-card .label{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);margin-bottom:16px}
 .team-card p{margin-top:20px;font-size:16.5px}
@@ -219,6 +225,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 @media (max-width:960px){
   .head-grid,.visit-info .wrap,.switch .inner{grid-template-columns:1fr;gap:36px}
   .page-head{padding:36px 0 48px}
+  .page-head .feat{grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .page-head .feat li{padding:18px 20px}
   .bg-cards{grid-template-columns:1fr}
   .visit-info figure{order:-1}
   .switch .btns{justify-content:flex-start}
@@ -288,6 +296,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   .actions .btn{flex:1 1 180px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.lang{transition:none}.btn:hover,.btn:active,.lang:hover,.lang:active{transform:none}}
+@media (max-width:560px){.page-head h1#rubrik{font-size:7vw}}
+#rubrik{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -311,20 +321,13 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 <!-- SIDHUVUD -->
 <section class="page-head" aria-labelledby="rubrik">
   <div class="wrap">
-    <div class="head-grid">
-      <div>
-        <p class="eyebrow">Aktivitetsförmågeutredning</p>
-        <h1 id="rubrik">AFU <em>medicinsk helhetsbedömning</em></h1>
-        <p class="lead">På Adaptus får du träffa våra medicinska team. Som neutral part gör vi en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven på Försäkringskassan.</p>
-      </div>
-      <div class="team-card">
-        <h2 class="label">Ditt team</h2>
-        <ul class="chips" aria-label="Teamets yrkesgrupper">
-          <li>Specialistläkare</li><li>Psykologer</li><li>Fysioterapeuter</li><li>Arbetsterapeuter</li><li>Medicinsk sekreterare</li>
-        </ul>
-        <p>Samtlig personal har särskild utbildning för utförandet av uppdraget.</p>
-      </div>
-    </div>
+    <p class="eyebrow">AFU</p>
+    <h1 id="rubrik">Aktivitetsförmågeutredning <em>på uppdrag av Försäkringskassan</em></h1>
+    <ul class="feat" aria-label="Om aktivitetsförmågeutredning hos Adaptus">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/></svg></span><div><strong>Neutral bedömning</strong><span class="sub">Vi gör en medicinsk helhetsbedömning</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.4c2.2.7 3.5 2.5 3.5 5.6"/></svg></span><div><strong>Medicinskt team</strong><span class="sub">Specialistläkare, psykologer, fysioterapeuter och arbetsterapeuter</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg></span><div><strong>Utbildad personal</strong><span class="sub">Särskild utbildning för uppdraget</span></div></li>
+    </ul>
   </div>
 </section>
 
@@ -365,6 +368,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
         <h3>Aktivitetsförmågeutredning (AFU)</h3>
         <p>För närvarande är aktivitetsförmågeutredning (AFU) den enda typen av försäkringsmedicinsk utredning som Försäkringskassan kan beställa från regionerna. En AFU är en standardiserad utredningsform som ser likadan ut för alla försäkrade.</p>
         <p>AFU ska ge en helhetsbild som inte bara beskriver funktionsnedsättningar och aktivitetsbegränsningar, utan även visar den försäkrades kvarvarande förmåga till aktivitet. Syftet är att få ett underlag som tydligt beskriver den försäkrades aktivitetsförmåga i förhållande till vad ett normalt förekommande arbete kräver.</p>
+        <p>På Adaptus gör vi, på uppdrag av Försäkringskassan och som neutral part, en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven hos myndigheten.</p>
       </article>
     </div>
   </div>
@@ -455,10 +459,16 @@ const T = [
  ["KBT privat","CBT private"],
  ["KBT via regionen","CBT via the region"],["KBT via regionen i korthet","CBT via the region at a glance"],["KBT privat i Kristianstad","Private CBT in Kristianstad"],
  ["Läs mer om KBT via regionen","Read more<span class=\"sr-only\"> about CBT via the region</span>"],["Läs mer om KBT privat","Read more<span class=\"sr-only\"> about private CBT</span>"],
-  ["På Adaptus får du träffa våra medicinska team. Som neutral part gör vi en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven på Försäkringskassan.","At Adaptus you meet our medical teams. As a neutral party, we carry out a medical overall assessment of you if you are on sick leave and registered with Försäkringskassan, the Swedish Social Insurance Agency."],
+  ["På Adaptus får du träffa våra medicinska team. På uppdrag av Försäkringskassan gör vi som neutral part en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven hos myndigheten.","At Adaptus you meet our medical teams. On behalf of Försäkringskassan, the Swedish Social Insurance Agency, we carry out, as a neutral party, a medical overall assessment of you if you are on sick leave and registered with the agency."],
  ["Ditt team","Your team"],
+ ["Aktivitetsförmågeutredning på uppdrag av Försäkringskassan","Activity capacity assessment <em>on behalf of Försäkringskassan</em>"],
+ ["Neutral bedömning","Neutral assessment"],["Vi gör en medicinsk helhetsbedömning","We carry out a medical overall assessment"],
+ ["Medicinskt team","Medical team"],["Specialistläkare, psykologer, fysioterapeuter och arbetsterapeuter","Specialist physicians, psychologists, physiotherapists and occupational therapists"],
+ ["Utbildad personal","Trained staff"],["Särskild utbildning för uppdraget","Special training for the assignment"],
+ ["På Adaptus gör vi, på uppdrag av Försäkringskassan och som neutral part, en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven hos myndigheten.","At Adaptus, on behalf of Försäkringskassan and as a neutral party, we carry out a medical overall assessment of you if you are on sick leave and registered with the agency."],
  ["Samtlig personal har särskild utbildning för utförandet av uppdraget.","All staff have special training for carrying out this assignment."],
  ["Aktivitetsförmågeutredning","Activity capacity assessment (AFU)"],
+ ["Aktivitetsförmåge-utredning","Activity capacity assessment (AFU)"],
  ["AFU medicinsk helhetsbedömning","AFU <em>medical overall assessment</em>"],
  ["Som neutral part gör vi en medicinsk helhetsbedömning av dig som är sjukskriven och inskriven på Försäkringskassan.","As a neutral party, we carry out a medical overall assessment of you if you are on sick leave and registered with Försäkringskassan, the Swedish Social Insurance Agency."],
  ["Inför ditt besök","Before your visit"],["Bakgrund till AFU","Background to AFU"],

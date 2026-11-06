@@ -83,6 +83,11 @@ header.site nav a[aria-current="page"]{background:var(--action);color:#fff}
 .place{display:flex;align-items:center;gap:10px;font-weight:600;margin-bottom:30px}
 .place svg{width:22px;height:22px}
 .actions{display:flex;flex-wrap:wrap;gap:14px}
+.refl{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--muted);font-size:16px;text-decoration:underline;text-decoration-color:var(--blush);text-underline-offset:4px;text-decoration-thickness:2px;padding:6px 0;transition:color .2s,text-decoration-color .2s}
+.refl svg{width:16px;height:16px;flex:none;transition:transform .25s}
+.refl:hover{color:var(--action);text-decoration-color:var(--action)}
+.refl:hover svg{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.refl,.refl svg{transition:none}.refl:hover svg{transform:none}}
 .waves{position:absolute;left:0;bottom:-1px;width:100%;height:140px;z-index:1}
 
 /* sektioner */
@@ -275,7 +280,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 /* Privat KBT – landningssida */
 .lp-hero{background:var(--rose);padding:52px 0 64px;position:relative}
 .lp-hero .eyebrow{margin-bottom:14px}
-.lp-hero h1{font-size:clamp(44px,6vw,78px);font-weight:500;line-height:1.04;color:var(--ink)}
+.lp-hero h1{font-size:clamp(40px,5vw,60px);font-weight:500;line-height:1.08;color:var(--ink)}
 .feat{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0 36px;max-width:1040px}
 .feat li{background:#fff;border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center}
 .feat .ico{width:52px;height:52px;border-radius:50%;background:var(--rose);color:var(--action);display:grid;place-items:center}
@@ -309,6 +314,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .reassure{list-style:none;display:grid;gap:12px;margin:26px 0}
 .reassure li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:18px}
 .reassure svg{width:24px;height:24px;color:var(--action);flex:none}
+.cancel-note{font-size:16px;color:var(--muted);margin:-8px 0 18px}
 .alt{font-size:17px}
 .alt a{font-weight:600;color:var(--ink);text-underline-offset:4px}
 .price{background:var(--blue);color:var(--blue-ink);border-radius:var(--radius);padding:26px 28px;margin-top:26px;max-width:26em}
@@ -447,6 +453,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <a class="btn primary big" href="#boka">Boka ditt första samtal</a>
       <a class="btn outline big" href="kontakt.html">Kontakt</a>
     </div>
+    <a class="refl" href="vardval-kbt.html"><span>Har du redan en remiss? Se KBT via regionen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -473,7 +480,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     <div>
       <h2 id="sa">Så går det <b>till</b></h2>
       <ol class="steps2">
-        <li><div><h3>Berätta kort vad du söker hjälp för</h3><p>Fyll i formuläret här på sidan, eller ring oss.</p></div></li>
+        <li><div><h3>Lämna dina kontaktuppgifter</h3><p>Fyll i formuläret här på sidan, eller ring oss.</p></div></li>
         <li><div><h3>Vi hör av oss</h3><p>Vi berättar hur du kommer igång.</p></div></li>
         <li><div><h3>Du bokar en tid som passar dig</h3><p>Sedan träffar du din terapeut hos oss i Kristianstad.</p></div></li>
       </ol>
@@ -492,21 +499,19 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   <div class="wrap">
     <div>
       <h2 id="boka-rubrik">Boka ditt <b>första samtal</b></h2>
-      <p>Fyll i formuläret så hör vi av oss. Du kan också ringa oss.</p>
+      <p>Lämna din e-postadress och ditt telefonnummer, så kontaktar vi dig. Du kan också ringa oss.</p>
       <ul class="reassure">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Ingen remiss</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Ingen kö</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>1 200 kr per samtal</li>
       </ul>
+      <p class="cancel-note">Avboka senast 24 timmar före ditt besök.</p>
       <p class="alt">Hellre ringa? <a href="tel:+4644188580">044 - 18 85 80</a></p>
     </div>
     <div class="form-card">
       <form id="bokning" action="#" method="post" data-endpoint="">
-        <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="pnr">Personnummer</label><input id="pnr" name="personnummer" type="text" inputmode="numeric" autocomplete="off" required pattern="[0-9]{6,8}[-+ ]?[0-9]{4}"><p class="hint">Tolv siffror, till exempel ÅÅÅÅMMDD-XXXX.</p></div>
         <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="tel">Telefon (valfritt)</label><input id="tel" name="telefon" type="tel" autocomplete="tel"></div>
-        <div class="field"><label for="besvar">Kort om vad du söker hjälp för</label><textarea id="besvar" name="besvar" required></textarea></div>
+        <div class="field"><label for="tel">Telefonnummer</label><input id="tel" name="telefon" type="tel" autocomplete="tel" required></div>
         <div class="hp" aria-hidden="true"><label>Lämna detta fält tomt <input name="website" tabindex="-1" autocomplete="off"></label></div>
         <button class="btn primary" type="submit">Skicka förfrågan</button>
         <p class="form-status" role="status" aria-live="polite" hidden></p>
@@ -546,6 +551,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <details><summary>Vad händer när jag har skickat formuläret?</summary><p>Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.</p></details>
       <details><summary>Det är första gången jag söker hjälp. Är det okej att vara osäker?</summary><p>Ja. Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.</p></details>
       <details><summary>Kan jag ringa eller mejla i stället?</summary><p>Ja. Ring oss på 044 - 18 85 80 eller mejla info@adaptus.se.</p></details>
+      <details><summary>Hur avbokar jag?</summary><p>Du avbokar genom att ringa oss på 044 - 18 85 80 eller mejla info@adaptus.se. Avbokningen behöver göras senast 24 timmar före ditt besök.</p></details>
+      <details><summary>Vad kostar det om jag inte avbokar?</summary><p>Om du inte avbokar i tid eller inte kommer till ditt besök kostar det 1 200 kronor.</p></details>
     </div>
   </div>
 </section>
@@ -632,9 +639,9 @@ const T = [
  ["Ingen remiss","No referral"],["Ingen kö","No queue"],["1 200 kr per samtal","SEK 1,200 per session"],
  ["24+ år av erfarenhet","24+ years of experience"],["Ackrediterad vårdvalsenhet i Region Skåne","Accredited provider in Region Skåne"],
  ["Boka ditt första samtal","Book your first appointment"],
- ["Fyll i formuläret så hör vi av oss. Du kan också ringa oss.","Fill in the form and we will get back to you. You can also call us."],
+ ["Lämna din e-postadress och ditt telefonnummer, så kontaktar vi dig. Du kan också ringa oss.","Leave your email address and phone number and we will contact you. You can also call us."],
  ["Namn","Name"],["Personnummer","Personal identity number"],["Tolv siffror, till exempel ÅÅÅÅMMDD-XXXX.","Twelve digits, for example YYYYMMDD-XXXX."],
- ["E-post","Email"],["Telefon (valfritt)","Phone (optional)"],["Kort om vad du söker hjälp för","Briefly, what you are seeking help for"],
+ ["E-post","Email"],["Telefonnummer","Phone number"],["Kort om vad du söker hjälp för","Briefly, what you are seeking help for"],
  ["Skicka förfrågan","Send request"],
  ["Vi använder dina uppgifter för att kontakta dig om din bokning. Läs vår integritetspolicy.","We use your details to contact you about your booking. Read our <a href=\"integritetspolicy.html\">privacy policy</a>."],
  ["Mår du akut dåligt? Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.","<strong>In an acute crisis?</strong> Call 112 if there is immediate danger. For healthcare advice around the clock, call 1177."],
@@ -642,7 +649,7 @@ const T = [
  ["Här får du möjlighet att tillsammans med en erfaren terapeut arbeta med det som känns svårt, oavsett om det handlar om stress, oro, nedstämdhet eller andra utmaningar.","Here you can work together with an experienced therapist on what feels difficult, whether it is about stress, worry, low mood or other challenges."],
  ["Stress","Stress"],["Oro","Worry"],["Nedstämdhet","Low mood"],["Andra utmaningar","Other challenges"],
  ["Så går det till","How it <b>works</b>"],
- ["Berätta kort vad du söker hjälp för","Briefly tell us what you are seeking help for"],
+ ["Lämna dina kontaktuppgifter","Leave your contact details"],
  ["Fyll i formuläret här på sidan, eller ring oss.","Fill in the form on this page, or call us."],
  ["Vi hör av oss","We get in touch"],["Vi berättar hur du kommer igång.","We tell you how to get started."],
  ["Du bokar en tid som passar dig","You book a time that suits you"],
@@ -654,7 +661,9 @@ const T = [
  ["Adaptus är ett privatägt vårdföretag med över 24 års erfarenhet av rehabilitering och bedömning. Vi är ackrediterad vårdvalsenhet inom Region Skåne.","Adaptus is a privately owned healthcare company with over 24 years of experience in rehabilitation and assessment. We are an accredited provider within Region Skåne."],
  ["Vanliga frågor","Frequently asked <b>questions</b>"],
  ["Behöver jag remiss?","Do I need a referral?"],["Nej. Du kan boka privat KBT direkt hos oss, utan remiss och utan kö.","No. You can book private CBT directly with us, without a referral and without a queue."],
- ["Vad kostar det?","What does it cost?"],["Ett samtal kostar 1 200 kronor.","One session costs SEK 1,200."],
+ ["Vad kostar det?","What does it cost?"],
+ ["Hur avbokar jag?","How do I cancel?"],["Du avbokar genom att ringa oss på 044 - 18 85 80 eller mejla info@adaptus.se. Avbokningen behöver göras senast 24 timmar före ditt besök.","You cancel by calling us on 044 - 18 85 80 or emailing info@adaptus.se. Cancellations must be made at least 24 hours before your appointment."],
+ ["Vad kostar det om jag inte avbokar?","What does it cost if I do not cancel?"],["Om du inte avbokar i tid eller inte kommer till ditt besök kostar det 1 200 kronor.","If you do not cancel in time or do not show up for your appointment, the fee is SEK 1,200."],["Ett samtal kostar 1 200 kronor.","One session costs SEK 1,200."],
  ["Vad händer när jag har skickat formuläret?","What happens after I have sent the form?"],["Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.","We get in touch with you and tell you how to get started. You can also call us on 044 - 18 85 80."],
  ["Det är första gången jag söker hjälp. Är det okej att vara osäker?","This is my first time seeking help. Is it okay to be unsure?"],["Ja. Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.","Yes. It is completely fine to be unsure about what help you need. Everything you tell us is treated confidentially."],
  ["Kan jag ringa eller mejla i stället?","Can I call or email instead?"],["Ja. Ring oss på 044 - 18 85 80 eller mejla info@adaptus.se.","Yes. Call us on 044 - 18 85 80 or email info@adaptus.se."],
@@ -719,6 +728,8 @@ const T = [
  ["Västra Storgatan 22, 1 tr291 30 Kristianstad","Västra Storgatan 22, 1 tr (one flight up)<br>291 30 Kristianstad"],
  ["Visa på karta (öppnas i ny flik)","Show on map<span class=\"sr-only\"> (opens in a new tab)</span>"],
  ["Hoppa till innehållet","Skip to content"],
+ ["Avboka senast 24 timmar före ditt besök.","Please cancel at least 24 hours before your appointment."],
+ ["Har du redan en remiss? Se KBT via regionen","Already have a referral? See CBT via the region"],
  ["Hem","Home"],["Vårdval KBT","Vårdval CBT"],["Privat KBT","Private CBT"],["Kontakt","Contact"],
  ["Utredning · Rehabilitering · Behandling","Assessment · Rehabilitation · Treatment"],
  ["Stöd och behandling när livet känns tungt","Support and treatment <em>when life feels heavy</em>"],

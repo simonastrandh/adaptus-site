@@ -225,6 +225,21 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 
 
 /* Vårdval KBT-sidan */
+.page-head .feat{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0 0;max-width:1040px}
+.page-head .feat li{background:#fff;border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center}
+.page-head .feat .ico{width:52px;height:52px;border-radius:50%;background:var(--rose);color:var(--action);display:grid;place-items:center}
+.page-head .feat .ico svg{width:26px;height:26px}
+.page-head .feat strong{display:block;font-family:var(--display);font-weight:600;font-size:21px;line-height:1.25}
+.refl{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--muted);font-size:16px;text-decoration:underline;text-decoration-color:var(--blush);text-underline-offset:4px;text-decoration-thickness:2px;padding:6px 0;transition:color .2s,text-decoration-color .2s}
+.refl svg{width:16px;height:16px;flex:none;transition:transform .25s}
+.refl:hover{color:var(--action);text-decoration-color:var(--action)}
+.refl:hover svg{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.refl,.refl svg{transition:none}.refl:hover svg{transform:none}}
+.page-head .feat .sub{display:block;font-size:16px;line-height:1.45;color:var(--muted);margin-top:2px}
+@media (max-width:960px){
+  .page-head .feat{grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .page-head .feat li{padding:18px 20px}
+}
 .facts-card{background:#fff;border-radius:var(--radius);padding:30px}
 .facts-card .label{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);margin-bottom:18px}
 .kv{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -351,22 +366,14 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 <!-- SIDHUVUD -->
 <section class="page-head" aria-labelledby="rubrik">
   <div class="wrap">
-    <div class="head-grid">
-      <div>
-        <p class="eyebrow">KBT via regionen</p>
-        <h1 id="rubrik">Tillsammans <em>hittar vi vägen framåt</em></h1>
-        <p class="lead">När livet känns tungt, när oro, nedstämdhet, stress eller tvångstankar tar över och gör vardagen svår, finns vi på Adaptus här för dig. Hos oss möts du med förståelse, värme och respekt för din unika situation.</p>
-      </div>
-      <div class="facts-card">
-        <h2 class="label">KBT via regionen i korthet</h2>
-        <dl class="kv">
-          <div><dt class="sr-only">Ålder</dt><dd><strong>16 år</strong><span>och äldre</span></dd></div>
-          <div><dt class="sr-only">Antal besök</dt><dd><strong>Upp till 16</strong><span>behandlingsbesök</span></dd></div>
-          <div><dt class="sr-only">Avgift</dt><dd><strong>200 kr</strong><span>per samtal</span></dd></div>
-          <div><dt class="sr-only">Remiss</dt><dd><strong>Remiss</strong><span>från din vårdcentral</span></dd></div>
-        </dl>
-      </div>
-    </div>
+    <p class="eyebrow">KBT via regionen</p>
+    <h1 id="rubrik">Tillsammans <em>hittar vi vägen framåt</em></h1>
+    <ul class="feat" aria-label="KBT via regionen i korthet">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14.5l2 2 4-4"/></svg></span><div><strong>Remiss krävs</strong><span class="sub">Från din vårdcentral</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/><path d="M6 12.5h.01M18 12.5h.01"/></svg></span><div><strong>200 kr per samtal</strong><span class="sub">Max 1 400 kr under 12 månader</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg></span><div><strong>Upp till 16 besök</strong><span class="sub">För dig som är 16 år eller äldre</span></div></li>
+    </ul>
+    <a class="refl" href="privat-kbt.html"><span>Har du ingen remiss? Läs om KBT privat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -375,6 +382,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   <div class="wrap">
     <div>
       <h2 id="kbt">KBT hos <b>Adaptus</b></h2>
+      <p>När livet känns tungt, när oro, nedstämdhet, stress eller tvångstankar tar över och gör vardagen svår, finns vi på Adaptus här för dig. Hos oss möts du med förståelse, värme och respekt för din unika situation.</p>
       <p>Vi är en ackrediterad vårdvalsenhet inom Region Skåne och erbjuder kognitiv beteendeterapi (KBT), en behandling som är vetenskapligt prövad. KBT hjälper dig att förstå och förändra tankar, känslor och beteenden som står i vägen för ditt välmående.</p>
       <p>Tillsammans med en erfaren terapeut arbetar du aktivt för att hitta nya sätt att hantera svårigheter och stärka din psykiska hälsa.</p>
     </div>
@@ -526,6 +534,9 @@ const T = [
  ["När livet känns tungt, när oro, nedstämdhet, stress eller tvångstankar tar över och gör vardagen svår, finns vi på Adaptus här för dig. Hos oss möts du med förståelse, värme och respekt för din unika situation.","When life feels heavy, when worry, low mood, stress or obsessive thoughts take over and make everyday life difficult, we at Adaptus are here for you. With us you are met with understanding, warmth and respect for your unique situation."],
  ["16 år","16 years"],["och äldre","and older"],["Upp till 16","Up to 16"],["behandlingsbesök","treatment sessions"],["200 kr","SEK 200"],["per samtal","per session"],["Remiss","Referral"],["från din vårdcentral","from your health centre"],
  ["KBT hos Adaptus","CBT at <b>Adaptus</b>"],
+ ["Remiss krävs","Referral required"],
+ ["Har du ingen remiss? Läs om KBT privat","No referral? Read about private CBT"],["Från din vårdcentral","From your health centre"],
+ ["200 kr per samtal","SEK 200 per session"],["Upp till 16 besök","Up to 16 sessions"],["För dig som är 16 år eller äldre","For you aged 16 or older"],
  ["Vi är en ackrediterad vårdvalsenhet inom Region Skåne och erbjuder kognitiv beteendeterapi (KBT), en behandling som är vetenskapligt prövad. KBT hjälper dig att förstå och förändra tankar, känslor och beteenden som står i vägen för ditt välmående.","We are an accredited provider within Region Skåne's “Vårdval” choice system and offer cognitive behavioural therapy (CBT), a treatment that has been scientifically tested. CBT helps you understand and change thoughts, feelings and behaviours that stand in the way of your well-being."],
  ["Tillsammans med en erfaren terapeut arbetar du aktivt för att hitta nya sätt att hantera svårigheter och stärka din psykiska hälsa.","Together with an experienced therapist, you work actively to find new ways of handling difficulties and strengthen your mental health."],
  ["För vem?","For <b>whom?</b>"],

@@ -122,21 +122,22 @@ section.block h2 b{font-weight:600}
 
 /* tre lika stora vägar in */
 .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.path{position:relative;border-radius:var(--radius);padding:32px 32px 28px;display:flex;flex-direction:column;min-height:280px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.path:hover{transform:translateY(-4px)}
-.path .tag{align-self:flex-start;background:#fff;border-radius:999px;padding:6px 14px;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
-.path h3{font-size:clamp(26px,2.4vw,30px);margin-bottom:12px}
+.path{position:relative;background:#fff;border:2px solid var(--pc-line);border-radius:var(--radius);padding:30px 28px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:300px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .45s}
+.path:hover{transform:translateY(-4px);border-color:var(--pc-ink);box-shadow:0 14px 30px -18px var(--pc-ink)}
+.path .art{width:112px;height:112px;margin-bottom:18px;flex:none}
+.path .tag{background:var(--pc-bg);color:var(--pc-ink);border-radius:999px;padding:6px 14px;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.path h3{font-size:clamp(24px,2.2vw,28px);margin-bottom:10px;color:var(--ink)}
 .path h3 b{font-weight:600;display:block}
-.path p{font-size:17px;max-width:20em}
-.path .more{margin-top:auto;padding-top:24px;display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:17px;text-decoration:none;color:inherit}
+.path p{font-size:17px;max-width:20em;color:var(--muted)}
+.path .more{margin-top:auto;padding-top:22px;display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:17px;text-decoration:none;color:var(--pc-ink)}
 .path .more svg{width:22px;height:22px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .path:hover .more svg{transform:translateX(5px)}
 .path .more:after{content:"";position:absolute;inset:0;border-radius:var(--radius)}
 .path .more:focus-visible{outline:none}
 .path:has(.more:focus-visible){outline:3px solid var(--ink);outline-offset:3px}
-.path.blue{background:var(--blue);color:var(--blue-ink)} .path.blue .tag{color:var(--blue-ink)}
-.path.rose{background:var(--rose);color:var(--ink)} .path.rose .tag{background:var(--action);color:#fff} .path.rose h3{color:var(--action-hover)}
-.path.green{background:var(--green);color:var(--green-ink)} .path.green .tag{color:var(--green-ink)}
+.path.blue{--pc-bg:var(--blue);--pc-ink:var(--blue-ink);--pc-line:#B9CFE4}
+.path.rose{--pc-bg:var(--rose);--pc-ink:var(--action-hover);--pc-line:var(--blush)}
+.path.green{--pc-bg:var(--green);--pc-ink:var(--green-ink);--pc-line:#BFD6B4}
 @media (prefers-reduced-motion:reduce){.path{transition:none}.path:hover{transform:none}.path .more svg{transition:none}}
 @media (max-width:960px){.paths{grid-template-columns:1fr}.path{min-height:0}}
 
@@ -153,7 +154,7 @@ section.block h2 b{font-weight:600}
 
 /* mottagningen */
 .visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.visit img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:var(--radius)}
+.visit img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:var(--radius);filter:saturate(.82) sepia(.12) brightness(1.02)}
 .visit p{max-width:32em;margin-top:18px}
 .visit address{font-style:normal;font-weight:600;font-size:19px;margin-top:24px;padding-left:16px;border-left:4px solid var(--action)}
 .visit h3{font-family:var(--display);font-weight:500;font-size:22px;margin:28px 0 10px}
@@ -167,7 +168,18 @@ section.block h2 b{font-weight:600}
 .steps li{counter-increment:s;display:flex;gap:16px;align-items:center;font-size:18px}
 .steps li:before{content:counter(s);flex:none;width:38px;height:38px;border-radius:50%;background:var(--action);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600}
 .book p{max-width:34em}
-.book .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:32px}
+.book .lead{font-size:18px;margin-bottom:22px}
+.reach{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+.reach a{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--blush);border-radius:var(--radius);padding:16px 18px;color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+.reach a:hover{border-color:var(--action);transform:translateY(-2px);box-shadow:0 8px 20px -12px rgba(122,10,18,.35)}
+.reach .ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--rose);color:var(--action);display:grid;place-items:center}
+.reach .ic svg{width:22px;height:22px}
+.reach small{display:block;font-size:14px;color:var(--muted)}
+.reach strong{font-family:var(--display);font-weight:600;font-size:18px;overflow-wrap:anywhere}
+.book .cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--blush)}
+.book .cta span{font-family:var(--display);font-weight:500;font-size:19px}
+@media (max-width:520px){.reach{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.reach a{transition:none}.reach a:hover{transform:none}}
 .book figure img{width:100%;height:auto;aspect-ratio:5/4;max-height:420px;object-fit:cover;object-position:50% 60%;border-radius:var(--radius)}
 
 /* sidfot */
@@ -298,8 +310,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     <p class="lead">Hos Adaptus möter du ett erfaret team med specialistkompetens inom psykisk hälsa. Vi erbjuder KBT, utredning och rehabilitering.</p>
     <p class="place"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Kristianstad</span></p>
     <div class="actions">
-      <a class="btn primary" href="privat-kbt.html#boka">Boka samtal</a>
-      <a class="btn outline" href="tel:+4644188580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>Ring 044 - 18 85 80</span></a>
+      <a class="btn primary" href="privat-kbt.html#boka">Boka samtal utan remiss</a>
+      <a class="btn outline" href="vardval-kbt.html">Boka med remiss</a>
     </div>
   </div></div>
   <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -317,13 +329,15 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 
     <div class="paths">
       <article class="path blue">
+        <svg class="art" viewBox="0 0 112 112" aria-hidden="true" focusable="false"><defs><clipPath id="c-blue"><circle cx="56" cy="56" r="56"/></clipPath></defs><circle cx="56" cy="56" r="56" fill="#DCE8F3"/><g clip-path="url(#c-blue)"><rect x="30" y="22" width="52" height="96" rx="9" fill="#fff" stroke="#1F3A5F" stroke-width="3.5"/><path d="M41 44h30M41 54h30M41 64h18" stroke="#9DB6D0" stroke-width="4" stroke-linecap="round"/><circle cx="76" cy="30" r="15" fill="#1F3A5F"/><path d="M76 23v14M69 30h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g></svg>
         <span class="tag">KBT via regionen</span>
         <h3>Samtalsbehandling <b>via Region Skåne</b></h3>
-        <p>För dig med lätt till medelsvår psykisk ohälsa.</p>
+        <p>För dig som har remiss och lätt till medelsvår psykisk ohälsa.</p>
         <a class="more" href="vardval-kbt.html"><span>Läs mer<span class="sr-only"> om KBT via regionen</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
 
       <article class="path rose">
+        <svg class="art" viewBox="0 0 112 112" aria-hidden="true" focusable="false"><defs><clipPath id="c-rose"><circle cx="56" cy="56" r="56"/></clipPath></defs><circle cx="56" cy="56" r="56" fill="#FDEDEA"/><g clip-path="url(#c-rose)"><rect x="24" y="30" width="64" height="80" rx="10" fill="#fff" stroke="#7A0A12" stroke-width="3.5"/><path d="M24 40a10 10 0 0 1 10-10h44a10 10 0 0 1 10 10v10H24z" fill="#D0000A"/><path d="M40 26v10M72 26v10" stroke="#7A0A12" stroke-width="4" stroke-linecap="round"/><path d="M42 74l9 9 19-20" fill="none" stroke="#D0000A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
         <span class="tag">KBT privat</span>
         <h3>Samtal <b>utan remiss och kö</b></h3>
         <p>Du bokar själv, direkt hos oss.</p>
@@ -331,6 +345,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       </article>
 
       <article class="path green">
+        <svg class="art" viewBox="0 0 112 112" aria-hidden="true" focusable="false"><defs><clipPath id="c-green"><circle cx="56" cy="56" r="56"/></clipPath></defs><circle cx="56" cy="56" r="56" fill="#E3EEDD"/><g clip-path="url(#c-green)"><rect x="28" y="20" width="56" height="98" rx="9" fill="#fff" stroke="#1F3F2B" stroke-width="3.5"/><path d="M38 66h9l5-12 8 24 5-12h9" fill="none" stroke="#3E7A4F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 38h32M40 46h20" stroke="#A9C79B" stroke-width="4" stroke-linecap="round"/><circle cx="78" cy="32" r="15" fill="#1F3F2B"/><path d="M71 32l5 5 9-10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
         <span class="tag">AFU</span>
         <h3>Sjukskriven? <b>Medicinsk utredning</b></h3>
         <p>En bedömning på uppdrag av Försäkringskassan. Ingen behandling.</p>
@@ -351,7 +366,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     </ul>
     <div class="text">
       <p>Adaptus är ett privatägt vårdföretag. Vi gör utredningar på uppdrag av Försäkringskassan, med Region Skåne som avtalspart.</p>
-      <p>Vi är också godkända inom Vårdval psykoterapi i Region Skåne och erbjuder KBT för dig med lätt till medelsvår psykisk ohälsa.</p>
+      <p>Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.</p>
       <p>Hos oss arbetar flera yrkesgrupper tillsammans. Vi ser hela dig, samarbetar med dig och ger dig tydlig återkoppling.</p>
     </div>
   </div>
@@ -361,7 +376,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 <section class="block visit" aria-labelledby="valkommen">
   <div class="wrap">
     <figure>
-      <img src="assets/mottagning.jpg" alt="Ett lugnt väntrum med fåtöljer, ett litet bord med ett ljus och växter i fönstret" width="869" height="869" loading="lazy">
+      <img src="assets/fasad.jpg" alt="Adaptus skylt på husfasaden av tegel i Kristianstad" width="1200" height="917" loading="lazy">
     </figure>
     <div>
       <h2 id="valkommen">Välkommen <b>till oss</b></h2>
@@ -381,16 +396,16 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 <section class="block book" aria-labelledby="boka">
   <div class="wrap">
     <div>
-      <h2 id="boka">Hur bokar jag <b>mitt första samtal?</b></h2>
-      <ol class="steps">
-        <li>Du ringer eller mejlar oss.</li>
-        <li>Vi berättar hur du kommer igång.</li>
-        <li>Du bokar en tid som passar dig.</li>
-      </ol>
-      <p>Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.</p>
+      <h2 id="boka">Hur kommer jag i <b>kontakt med er?</b></h2>
+      <p class="lead">Ring eller mejla oss, så hjälper vi dig vidare. Det går bra att höra av sig även om du är osäker på vilken hjälp du behöver.</p>
+      <ul class="reach">
+        <li><a href="tel:+4644188580"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Ring oss</small><strong>044 - 18 85 80</strong></span></a></li>
+        <li><a href="mailto:info@adaptus.se"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>Mejla oss</small><strong>info@adaptus.se</strong></span></a></li>
+      </ul>
+      <p>Allt du berättar behandlas konfidentiellt.</p>
       <div class="cta">
-        <a class="btn primary big" href="privat-kbt.html#boka">Boka ditt första samtal</a>
-        <a class="btn outline big" href="tel:+4644188580">Ring 044 - 18 85 80</a>
+        <span>Vill du boka utan remiss?</span>
+        <a class="btn primary big" href="privat-kbt.html#boka">Boka samtal utan remiss</a>
       </div>
     </div>
     <figure>
@@ -485,13 +500,15 @@ const T = [
  ["Stöd och behandling när livet känns tungt","Support and treatment <em>when life feels heavy</em>"],
  ["Hos Adaptus möter du ett erfaret team med specialistkompetens inom psykisk hälsa. Vi erbjuder KBT, utredning och rehabilitering.","At Adaptus you meet an experienced team with specialist expertise in mental health. We offer CBT, assessments and rehabilitation."],
  ["Boka samtal","Book an appointment"],
+ ["Boka samtal utan remiss","Book an appointment without a referral"],
+ ["Boka med remiss","Book with a referral"],
  ["Ring 044 - 18 85 80","Call 044 - 18 85 80"],
  ["Ring oss 044 - 18 85 80","Call us 044 - 18 85 80"],
  ["Hur kan vi hjälpa dig?","How can we help you?"],
  ["Välj det som passar din situation.","Choose what fits your situation."],
  ["Du som vill ha samtalsbehandling (KBT)","If you want talking therapy (CBT)"],
  ["Tillsammans hittar vi vägen","Together <b>we find the way</b>"],
- ["För dig med lätt till medelsvår psykisk ohälsa.","For people with mild to moderate mental health problems."],
+ ["För dig som har remiss och lätt till medelsvår psykisk ohälsa.","For people with a referral and mild to moderate mental health problems."],
  ["Tar oro, nedstämdhet, stress eller tvångstankar över vardagen? Hos oss möts du med förståelse, värme och respekt för just din situation.","Do worry, low mood, stress or obsessive thoughts take over your everyday life? With us you are met with understanding, warmth and respect for your situation."],
  ["Vi är en godkänd vårdvalsenhet inom Region Skåne och erbjuder KBT, kognitiv beteendeterapi. Det är en behandling som är vetenskapligt prövad.","We are an approved provider within Region Skåne's “Vårdval” choice system and offer CBT, cognitive behavioural therapy. It is a treatment that has been scientifically tested."],
  ["Läs mer om Vårdval KBT","Read more<span class=\"sr-only\"> about Vårdval CBT</span>"],
@@ -514,7 +531,7 @@ const T = [
  ["Specialistteam","Specialist team"],
  ["läkare, psykologer, fysioterapeuter och arbetsterapeuter","physicians, psychologists, physiotherapists and occupational therapists"],
  ["Adaptus är ett privatägt vårdföretag. Vi gör utredningar på uppdrag av Försäkringskassan, med Region Skåne som avtalspart.","Adaptus is a privately owned healthcare company. We carry out assessments on behalf of Försäkringskassan, with Region Skåne as contracting party."],
- ["Vi är också godkända inom Vårdval psykoterapi i Region Skåne och erbjuder KBT för dig med lätt till medelsvår psykisk ohälsa.","We are also approved within Vårdval psykoterapi in Region Skåne and offer CBT for people with mild to moderate mental health problems."],
+ ["Du kan få KBT hos oss på två sätt. Med remiss: vi är godkända inom Vårdval psykoterapi i Region Skåne, och har du en remiss betalar du 200 kr per samtal. Utan remiss: du bokar direkt hos oss, utan kö och med kort väntetid. Ett samtal kostar 1 200 kr.","You can get CBT with us in two ways. With a referral: we are approved within Vårdval psykoterapi in Region Skåne, and if you have a referral you pay SEK 200 per session. Without a referral: you book directly with us, with no queue and a short wait. One session costs SEK 1,200."],
  ["Hos oss arbetar flera yrkesgrupper tillsammans. Vi ser hela dig, samarbetar med dig och ger dig tydlig återkoppling.","At Adaptus, several professions work together. We see the whole you, work with you and give you clear feedback."],
  ["Välkommen till oss","Welcome <b>to our clinic</b>"],
  ["Du träffar oss på vår mottagning i Kristianstad. Ring eller mejla om du undrar över hur det går till.","You meet us at our clinic in Kristianstad. Call or email if you wonder how it works."],
@@ -523,12 +540,11 @@ const T = [
  ["Med bil: Du parkerar enklast på Stora Torg.","<strong>By car:</strong> The easiest place to park is Stora Torg."],
  ["Med tåg eller buss: Resecentrum ligger 5 minuters gångavstånd från oss.","<strong>By train or bus:</strong> The travel centre (Resecentrum) is a 5-minute walk from us."],
  ["Visa på karta (öppnas i ny flik)","Show on map<span class=\"sr-only\"> (opens in a new tab)</span>"],
- ["Hur bokar jag mitt första samtal?","How do I book <b>my first appointment?</b>"],
- ["Du ringer eller mejlar oss.","You call or email us."],
- ["Vi berättar hur du kommer igång.","We tell you how to get started."],
- ["Du bokar en tid som passar dig.","You book a time that suits you."],
- ["Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.","It is completely fine to be unsure about what help you need. Everything you tell us is treated confidentially."],
- ["Boka ditt första samtal","Book your first appointment"],
+ ["Hur kommer jag i kontakt med er?","How do I <b>get in touch?</b>"],
+ ["Ring eller mejla oss, så hjälper vi dig vidare. Det går bra att höra av sig även om du är osäker på vilken hjälp du behöver.","Call or email us and we will help you on your way. It is fine to get in touch even if you are unsure what help you need."],
+ ["Ring oss","Call us"],["Mejla oss","Email us"],
+ ["Allt du berättar behandlas konfidentiellt.","Everything you tell us is treated confidentially."],
+ ["Vill du boka utan remiss?","Want to book without a referral?"],
  ["Mår du akut dåligt? Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.","<strong>In an acute crisis?</strong> Call 112 if there is immediate danger. For healthcare advice around the clock, call 1177."],
  ["Ring oss!","Call us!"],
  ["Integritetspolicy","Privacy policy"]
@@ -537,7 +553,7 @@ const A = [
  ["Akut hjälp","Urgent help"],["Sidor","Pages"],
  ["Adaptus, till startsidan","Adaptus, to the start page"],["Meny","Menu"],["Huvudmeny","Main menu"],
  ["Adaptus i korthet","Adaptus at a glance"],
- ["Ett lugnt väntrum med fåtöljer, ett litet bord med ett ljus och växter i fönstret","A calm waiting room with armchairs, a small table with a candle and plants in the window"],
+ ["Adaptus skylt på husfasaden av tegel i Kristianstad","Adaptus sign on the brick facade of the building in Kristianstad"],
  ["Två personer håller varandras händer","Two people holding hands"],
  ["Region Skåne (öppnas i ny flik)","Region Skåne (opens in a new tab)"],
  ["Försäkringskassan (öppnas i ny flik)","Försäkringskassan (opens in a new tab)"]
