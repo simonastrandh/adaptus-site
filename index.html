@@ -80,6 +80,11 @@ header.site nav a[aria-current="page"]{background:var(--action);color:#fff}
 .hero h1{font-size:clamp(38px,5vw,64px);font-weight:500;color:var(--ink);line-height:1.08}
 .hero h1 em{font-style:normal;font-weight:600;color:var(--action-hover)}
 .hero .actions{margin-top:32px}
+.hero .refl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--muted);font-size:15px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;text-decoration-thickness:2px;padding:6px 0;transition:color .2s,text-decoration-color .2s}
+.hero .refl svg{width:16px;height:16px;flex:none;color:var(--action);transition:transform .25s}
+.hero .refl:hover{color:var(--action-hover);text-decoration-color:var(--action-hover)}
+.hero .refl:hover svg{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.hero .refl,.hero .refl svg{transition:none}.hero .refl:hover svg{transform:none}}
 .actions{display:flex;flex-wrap:wrap;gap:14px}
 .waves{position:absolute;left:0;bottom:-1px;width:100%;height:140px;z-index:1}
 
@@ -312,6 +317,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <a class="btn primary" href="privat-kbt.html#boka">Boka samtal utan remiss</a>
       <a class="btn outline" href="vardval-kbt.html">Jag har remiss</a>
     </div>
+    <a class="refl" href="afu.html"><span>Sjukskriven? Läs om AFU</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div></div>
   <svg class="waves" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <path d="M0 50C240 0 480 100 720 50S1200 0 1440 50V140H0Z" fill="#F6D5CE" fill-opacity=".8"/>
@@ -501,6 +507,7 @@ const T = [
  ["Boka samtal","Book an appointment"],
  ["Boka samtal utan remiss","Book an appointment without a referral"],
  ["Jag har remiss","I have a referral"],
+ ["Sjukskriven? Läs om AFU","On sick leave? Read about AFU"],
   ["Ring 044 - 18 85 80","Call 044 - 18 85 80"],
  ["Ring oss 044 - 18 85 80","Call us 044 - 18 85 80"],
  ["Hur kan vi hjälpa dig?","How can we help you?"],
