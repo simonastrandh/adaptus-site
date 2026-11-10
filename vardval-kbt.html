@@ -150,6 +150,33 @@ section.block h2 b{font-weight:600}
 .book .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:32px}
 .book figure img{width:100%;height:auto;aspect-ratio:5/4;max-height:420px;object-fit:cover;object-position:50% 60%;border-radius:var(--radius)}
 
+.form-card{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:0 26px 54px -30px rgba(122,10,18,.55)}
+.form-card h2{font-size:30px;font-weight:600;line-height:1.15;margin-bottom:6px}
+.form-card .sub{color:var(--muted);font-size:16px;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--display);font-weight:500;font-size:16px;margin-bottom:6px}
+.field input,.field textarea{width:100%;font-family:var(--body);font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #B9A39D;border-radius:14px;padding:13px 16px;min-height:50px}
+.field textarea{min-height:110px;resize:vertical;line-height:1.5}
+.field input:focus,.field textarea:focus{outline:3px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
+.field .hint{font-size:14px;color:var(--muted);margin-top:5px}
+.call-note{font-size:15px;color:var(--muted);text-align:center;margin-top:10px}
+.form-card .btn{width:100%;min-height:58px;font-size:19px;margin-top:6px}
+.fine{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.55}
+.fine a{color:var(--ink);text-underline-offset:3px}
+.fine.crisis-note{margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+.form-status{margin-top:14px;padding:12px 16px;border-radius:14px;background:var(--blue);color:var(--blue-ink);font-weight:500;font-size:15.5px}
+.form-status[hidden]{display:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.book-form{background:var(--rose)}
+.book-form .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.book-form h2{margin-bottom:16px}
+.book-form h2 b{font-weight:600}
+.alt{font-size:17px;margin-top:22px}
+.alt a{font-weight:600;color:var(--ink);text-underline-offset:4px}
+.book-form .refl-note{font-size:16px;color:var(--muted);margin-top:18px}
+.book-form .refl-note a{color:var(--ink);text-underline-offset:3px}
+@media (max-width:960px){.book-form .wrap{grid-template-columns:1fr;gap:32px}}
+@media (max-width:520px){.form-card{padding:24px 20px}}
 /* sidfot */
 .foot-wave{display:block;width:100%;height:70px;background:var(--bg);overflow:hidden}
 .foot-wave svg{display:block;width:100%;height:100%}
@@ -370,8 +397,8 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     <h1 id="rubrik">Tillsammans <em>hittar vi vägen framåt</em></h1>
     <ul class="feat" aria-label="KBT via regionen i korthet">
       <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14.5l2 2 4-4"/></svg></span><div><strong>Remiss krävs</strong><span class="sub">Från din vårdcentral</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/><path d="M6 12.5h.01M18 12.5h.01"/></svg></span><div><strong>200 kr per samtal</strong><span class="sub">Max 1 400 kr under 12 månader</span></div></li>
-      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg></span><div><strong>Upp till 16 besök</strong><span class="sub">För dig som är 16 år eller äldre</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="3"/><path d="M6 12.5h.01M18 12.5h.01"/></svg></span><div><strong>200 kr per samtal</strong><span class="sub">Max 1 450 kr under 12 månader</span></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg></span><div><strong>Frikort gäller</strong><span class="sub">För dig som är 16 år eller äldre</span></div></li>
     </ul>
     <a class="refl" href="privat-kbt.html"><span>Har du ingen remiss? Läs om KBT privat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
@@ -440,6 +467,34 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <h3>Mer information</h3>
       <p>Vill du veta mer om Vårdval psykoterapi och hur det fungerar? Läs mer på 1177.se.</p>
       <a class="btn" href="https://www.1177.se/Skane/undersokning-behandling/behandlingar-vid-psykiska-sjukdomar-och-besvar/valj-mottagning-for-psykoterapi-i-skane/" target="_blank" rel="noopener">Gå till 1177.se<span class="sr-only"> (öppnas i ny flik)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BOKA MED REMISS -->
+<section class="block book-form" id="boka" aria-labelledby="boka-rubrik">
+  <div class="wrap">
+    <div>
+      <h2 id="boka-rubrik">Har du remiss? <b>Boka din tid</b></h2>
+      <p>Har du redan en remiss från din vårdcentral? Lämna ditt namn och ditt telefonnummer, så kontaktar vi dig och bokar en tid. Du kan också ringa oss.</p>
+      <p class="alt">Hellre ringa? <a href="tel:+4644188580">044 - 18 85 80</a></p>
+      <p class="refl-note"><a href="privat-kbt.html">Har du ingen remiss? Läs om privat KBT</a></p>
+    </div>
+    <div class="form-card">
+      <form id="bokning" action="#" method="post" data-endpoint="">
+        <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="tel">Telefonnummer</label><input id="tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        <input type="hidden" name="formular" value="KBT via regionen (med remiss)">
+        <input type="hidden" name="remiss" value="Ja, personen uppger att hen har remiss från vårdcentral">
+        <input type="hidden" name="_subject" value="Ny bokningsförfrågan: KBT via regionen (med remiss)">
+        <input type="hidden" name="sida" value="">
+        <div class="hp" aria-hidden="true"><label>Lämna detta fält tomt <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn primary" type="submit">Be oss ringa upp dig</button>
+        <p class="call-note">Vi ringer dig för att boka en tid.</p>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="fine">Vi använder dina uppgifter för att kontakta dig om din bokning. Läs vår <a href="integritetspolicy.html">integritetspolicy</a>.</p>
+      <p class="fine crisis-note"><strong>Mår du akut dåligt?</strong> Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.</p>
     </div>
   </div>
 </section>
@@ -536,7 +591,7 @@ const T = [
  ["KBT hos Adaptus","CBT at <b>Adaptus</b>"],
  ["Remiss krävs","Referral required"],
  ["Har du ingen remiss? Läs om KBT privat","No referral? Read about private CBT"],["Från din vårdcentral","From your health centre"],
- ["200 kr per samtal","SEK 200 per session"],["Upp till 16 besök","Up to 16 sessions"],["För dig som är 16 år eller äldre","For you aged 16 or older"],
+ ["200 kr per samtal","SEK 200 per session"],["Upp till 16 besök","Up to 16 sessions"],["Frikort gäller","Free-care card applies"],["Max 1 450 kr under 12 månader","Max SEK 1,450 over 12 months"],["För dig som är 16 år eller äldre","For you aged 16 or older"],
  ["Vi är en ackrediterad vårdvalsenhet inom Region Skåne och erbjuder kognitiv beteendeterapi (KBT), en behandling som är vetenskapligt prövad. KBT hjälper dig att förstå och förändra tankar, känslor och beteenden som står i vägen för ditt välmående.","We are an accredited provider within Region Skåne's “Vårdval” choice system and offer cognitive behavioural therapy (CBT), a treatment that has been scientifically tested. CBT helps you understand and change thoughts, feelings and behaviours that stand in the way of your well-being."],
  ["Tillsammans med en erfaren terapeut arbetar du aktivt för att hitta nya sätt att hantera svårigheter och stärka din psykiska hälsa.","Together with an experienced therapist, you work actively to find new ways of handling difficulties and strengthen your mental health."],
  ["För vem?","For <b>whom?</b>"],
@@ -554,6 +609,14 @@ const T = [
  ["Mer information","More information"],
  ["Vill du veta mer om Vårdval psykoterapi och hur det fungerar? Läs mer på 1177.se.","Want to know more about Vårdval psykoterapi and how it works? Read more at 1177.se."],
  ["Gå till 1177.se (öppnas i ny flik)","Go to 1177.se<span class=\"sr-only\"> (opens in a new tab)</span>"],
+ ["Har du remiss? Boka din tid","Have a referral? <b>Book your appointment</b>"],
+ ["Har du redan en remiss från din vårdcentral? Lämna ditt namn och ditt telefonnummer, så kontaktar vi dig och bokar en tid. Du kan också ringa oss.","Do you already have a referral from your health centre? Leave your name and phone number and we will contact you and book an appointment. You can also call us."],
+ ["Hellre ringa? 044 - 18 85 80","Prefer to call? <a href=\"tel:+4644188580\">044 - 18 85 80</a>"],
+ ["Har du ingen remiss? Läs om privat KBT","No referral? Read about private CBT"],
+ ["Namn","Name"],["Telefonnummer","Phone number"],
+ ["Be oss ringa upp dig","Request a call back"],["Vi ringer dig för att boka en tid.","We will call you to book an appointment."],
+ ["Vi använder dina uppgifter för att kontakta dig om din bokning. Läs vår integritetspolicy.","We use your details to contact you about your booking. Read our <a href=\"integritetspolicy.html\">privacy policy</a>."],
+ ["Mår du akut dåligt? Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.","<strong>In an acute crisis?</strong> Call 112 if there is immediate danger. For healthcare advice around the clock, call 1177."],
  ["Vill du boka utan remiss?","Want to book <b>without a referral?</b>"],
  ["Du kan också boka privat KBT direkt hos oss, utan remiss och utan kö.","You can also book private CBT directly with us, without a referral and without a queue."],
  ["Privat KBT","Private CBT"],
@@ -685,6 +748,26 @@ langBtn.addEventListener('click',()=>setLang(document.documentElement.lang==='en
 let start='sv';
 try{start=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'sv'}catch(e){}
 if(start==='en')setLang('en',false);
+/* ===== Bokningsformulär ===== */
+(function(){
+  const form=document.getElementById('bokning'); if(!form)return;
+  const status=form.querySelector('.form-status'), btn=form.querySelector('button[type=submit]');
+  const M={sv:{preview:'Förhandsvisning: formuläret är inte kopplat till något system än och skickar inget.',ok:'Tack! Vi har tagit emot din förfrågan och hör av oss.',err:'Något gick fel. Försök igen eller ring oss på 044 - 18 85 80.',sending:'Skickar…'},
+           en:{preview:'Preview: the form is not connected to any system yet and sends nothing.',ok:'Thank you! We have received your request and will get in touch.',err:'Something went wrong. Please try again or call us on 044 - 18 85 80.',sending:'Sending…'}};
+  const say=k=>{status.hidden=false;status.textContent=M[document.documentElement.lang==='en'?'en':'sv'][k]};
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return}
+    if(form.website&&form.website.value)return;               // skräppost
+    if(form.sida)form.sida.value=location.href;
+    const ep=form.dataset.endpoint;
+    if(!ep){say('preview');return}
+    btn.disabled=true;say('sending');
+    try{const r=await fetch(ep,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(!r.ok)throw 0;form.reset();say('ok')}catch(_){say('err')}
+    btn.disabled=false;
+  });
+})();
 </script>
 </body>
 </html>

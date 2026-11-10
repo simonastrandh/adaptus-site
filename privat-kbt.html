@@ -297,21 +297,14 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
 .field textarea{min-height:110px;resize:vertical;line-height:1.5}
 .field input:focus,.field textarea:focus{outline:3px solid var(--ink);outline-offset:2px;border-color:var(--ink)}
 .field .hint{font-size:14px;color:var(--muted);margin-top:5px}
+.call-note{font-size:15px;color:var(--muted);text-align:center;margin-top:10px}
 .form-card .btn{width:100%;min-height:58px;font-size:19px;margin-top:6px}
 .fine{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.55}
 .fine a{color:var(--ink);text-underline-offset:3px}
 .fine.crisis-note{margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
 .form-status{margin-top:14px;padding:12px 16px;border-radius:14px;background:var(--blue);color:var(--blue-ink);font-weight:500;font-size:15.5px}
 .form-status[hidden]{display:none}
-.mail-steps{list-style:none;counter-reset:ms;display:grid;gap:12px;margin:0 0 22px;padding:0}
-.mail-steps li{counter-increment:ms;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:16.5px;line-height:1.5}
-.mail-steps li::before{content:counter(ms);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--rose);color:var(--wine);font-family:var(--display);font-weight:600;font-size:16px}
-.mail-note{margin-top:20px;padding:16px 18px;border-radius:16px;background:var(--blue);color:var(--blue-ink)}
-.mail-note h3{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:4px}
-.mail-note p{font-size:15.5px;line-height:1.55}
-.mail-note p+p{margin-top:8px;font-weight:600}
-.mail-fallback{font-size:15px;color:var(--muted);margin-top:14px;line-height:1.55}
-.mail-fallback a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .book-form{background:var(--rose)}
 /* växla bakgrunder på denna sida: rosa, sand, vit, rosa, sand, rosa */
 .lp-hero + .who{background:var(--bg)}
@@ -488,7 +481,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     <div>
       <h2 id="sa">Så går det <b>till</b></h2>
       <ol class="steps2">
-        <li><div><h3>Skicka ett mejl till oss</h3><p>Tryck på knappen, fyll i dina uppgifter och skicka. Du kan också ringa oss.</p></div></li>
+        <li><div><h3>Lämna dina kontaktuppgifter</h3><p>Fyll i formuläret här på sidan, eller ring oss.</p></div></li>
         <li><div><h3>Vi hör av oss</h3><p>Vi berättar hur du kommer igång.</p></div></li>
         <li><div><h3>Du bokar en tid som passar dig</h3><p>Sedan träffar du din terapeut hos oss i Kristianstad.</p></div></li>
       </ol>
@@ -507,7 +500,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
   <div class="wrap">
     <div>
       <h2 id="boka-rubrik">Boka ditt <b>första samtal</b></h2>
-      <p>Du bokar genom att skicka ett mejl till oss. Tryck på knappen så öppnas ett färdigt mejl där du fyller i dina uppgifter. Du kan också ringa oss.</p>
+      <p>Lämna ditt namn och ditt telefonnummer, så kontaktar vi dig. Du kan också ringa oss.</p>
       <ul class="reassure">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Ingen remiss</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Ingen kö</li>
@@ -517,20 +510,17 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
       <p class="alt">Hellre ringa? <a href="tel:+4644188580">044 - 18 85 80</a></p>
     </div>
     <div class="form-card">
-      <h2>Boka via e-post</h2>
-      <p class="sub">Så här går det till:</p>
-      <ol class="mail-steps">
-        <li>Tryck på knappen. Ett färdigt mejl öppnas i ditt mejlprogram.</li>
-        <li>Fyll i ditt namn, telefonnummer, personnummer och vad ärendet gäller. Skriv efter kolontecknet på varje rad.</li>
-        <li>Skicka mejlet. Vi ringer dig för att boka en tid.</li>
-      </ol>
-      <a class="btn primary" id="mejla" href="mailto:info@adaptus.se">Öppna mejl och boka</a>
-      <p class="mail-fallback">Öppnades inget mejl? Skicka ett mejl till <a href="mailto:info@adaptus.se">info@adaptus.se</a> och skriv ditt namn, telefonnummer, personnummer och vad ärendet gäller.</p>
-      <div class="mail-note">
-        <h3>Varför mejlar du själv?</h3>
-        <p>Vi använder inget formulär på webbplatsen. Då går dina uppgifter direkt från din e-post till vår och passerar inget formulärverktyg som drivs av en tredje part. Du bestämmer själv vad du skickar.</p>
-        <p>Vi bryr oss om din säkerhet och dina personuppgifter.</p>
-      </div>
+      <form id="bokning" action="#" method="post" data-endpoint="">
+        <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="tel">Telefonnummer</label><input id="tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        <input type="hidden" name="formular" value="Privat KBT (utan remiss)">
+        <input type="hidden" name="_subject" value="Ny bokningsförfrågan: Privat KBT (utan remiss)">
+        <input type="hidden" name="sida" value="">
+        <div class="hp" aria-hidden="true"><label>Lämna detta fält tomt <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn primary" type="submit">Be oss ringa upp dig</button>
+        <p class="call-note">Vi ringer dig för att boka en tid.</p>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
       <p class="fine">Vi använder dina uppgifter för att kontakta dig om din bokning. Läs vår <a href="integritetspolicy.html">integritetspolicy</a>.</p>
       <p class="fine crisis-note"><strong>Mår du akut dåligt?</strong> Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.</p>
     </div>
@@ -563,7 +553,7 @@ footer .maplink{font-weight:600;font-size:15px;text-decoration:underline}
     <div class="list">
       <details><summary>Behöver jag remiss?</summary><p>Nej. Du kan boka privat KBT direkt hos oss, utan remiss och utan kö.</p></details>
       <details><summary>Vad kostar det?</summary><p>Ett samtal kostar 1 200 kronor.</p></details>
-      <details><summary>Vad händer när jag har skickat mejlet?</summary><p>Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.</p></details>
+      <details><summary>Vad händer när jag har skickat formuläret?</summary><p>Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.</p></details>
       <details><summary>Det är första gången jag söker hjälp. Är det okej att vara osäker?</summary><p>Ja. Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.</p></details>
       <details><summary>Kan jag ringa eller mejla i stället?</summary><p>Ja. Ring oss på 044 - 18 85 80 eller mejla info@adaptus.se.</p></details>
       <details><summary>Hur avbokar jag?</summary><p>Du avbokar genom att ringa oss på 044 - 18 85 80 eller mejla info@adaptus.se. Avbokningen behöver göras senast 24 timmar före ditt besök.</p></details>
@@ -654,30 +644,21 @@ const T = [
  ["Ingen remiss","No referral"],["Ingen kö","No queue"],["1 200 kr per samtal","SEK 1,200 per session"],
  ["24+ år av erfarenhet","24+ years of experience"],["Ackrediterad vårdvalsenhet i Region Skåne","Accredited provider in Region Skåne"],
  ["Boka ditt första samtal","Book your first appointment"],
- ["Du bokar genom att skicka ett mejl till oss. Tryck på knappen så öppnas ett färdigt mejl där du fyller i dina uppgifter. Du kan också ringa oss.","You book by sending us an email. Press the button and a ready-made email opens where you fill in your details. You can also call us."],
+ ["Lämna ditt namn och ditt telefonnummer, så kontaktar vi dig. Du kan också ringa oss.","Leave your name and phone number and we will contact you. You can also call us."],
  ["Namn","Name"],["Personnummer","Personal identity number"],["Tolv siffror, till exempel ÅÅÅÅMMDD-XXXX.","Twelve digits, for example YYYYMMDD-XXXX."],
  ["E-post","Email"],["Telefonnummer","Phone number"],["Kort om vad du söker hjälp för","Briefly, what you are seeking help for"],
- ["Skicka förfrågan","Send request"],
+ ["Be oss ringa upp dig","Request a call back"],["Vi ringer dig för att boka en tid.","We will call you to book an appointment."],
  ["Vi använder dina uppgifter för att kontakta dig om din bokning. Läs vår integritetspolicy.","We use your details to contact you about your booking. Read our <a href=\"integritetspolicy.html\">privacy policy</a>."],
  ["Mår du akut dåligt? Ring 112 vid akut fara. För sjukvårdsrådgivning dygnet runt, ring 1177.","<strong>In an acute crisis?</strong> Call 112 if there is immediate danger. For healthcare advice around the clock, call 1177."],
  ["Det här kan du få hjälp med","What you can <b>get help with</b>"],
  ["Här får du möjlighet att tillsammans med en erfaren terapeut arbeta med det som känns svårt, oavsett om det handlar om stress, oro, nedstämdhet eller andra utmaningar.","Here you can work together with an experienced therapist on what feels difficult, whether it is about stress, worry, low mood or other challenges."],
  ["Stress","Stress"],["Oro","Worry"],["Nedstämdhet","Low mood"],["Andra utmaningar","Other challenges"],
  ["Så går det till","How it <b>works</b>"],
- ["Skicka ett mejl till oss","Send us an email"],
- ["Tryck på knappen, fyll i dina uppgifter och skicka. Du kan också ringa oss.","Press the button, fill in your details and send. You can also call us."],
+ ["Lämna dina kontaktuppgifter","Leave your contact details"],
+ ["Fyll i formuläret här på sidan, eller ring oss.","Fill in the form on this page, or call us."],
  ["Vi hör av oss","We get in touch"],["Vi berättar hur du kommer igång.","We tell you how to get started."],
  ["Du bokar en tid som passar dig","You book a time that suits you"],
  ["Sedan träffar du din terapeut hos oss i Kristianstad.","Then you meet your therapist with us in Kristianstad."],
- ["Boka via e-post","Book by <b>email</b>"],["Så här går det till:","Here is how it works:"],
- ["Tryck på knappen. Ett färdigt mejl öppnas i ditt mejlprogram.","Press the button. A ready-made email opens in your email app."],
- ["Fyll i ditt namn, telefonnummer, personnummer och vad ärendet gäller. Skriv efter kolontecknet på varje rad.","Fill in your name, phone number, personal identity number and what your enquiry is about. Write after the colon on each line."],
- ["Skicka mejlet. Vi ringer dig för att boka en tid.","Send the email. We will call you to book an appointment."],
- ["Öppna mejl och boka","Open email and book"],
- ["Öppnades inget mejl? Skicka ett mejl till info@adaptus.se och skriv ditt namn, telefonnummer, personnummer och vad ärendet gäller.","Did no email open? Send an email to <a href=\"mailto:info@adaptus.se\">info@adaptus.se</a> and write your name, phone number, personal identity number and what your enquiry is about."],
- ["Varför mejlar du själv?","Why do you send the email yourself?"],
- ["Vi använder inget formulär på webbplatsen. Då går dina uppgifter direkt från din e-post till vår och passerar inget formulärverktyg som drivs av en tredje part. Du bestämmer själv vad du skickar.","We do not use a form on the website. Your details then go straight from your email to ours and do not pass through a form tool run by a third party. You decide what you send."],
- ["Vi bryr oss om din säkerhet och dina personuppgifter.","We care about your safety and your personal data."],
  ["Vad är KBT?","What is CBT?"],
  ["KBT står för kognitiv beteendeterapi, en behandling som är vetenskapligt prövad. Den hjälper dig att förstå och förändra tankar, känslor och beteenden som står i vägen för ditt välmående.","CBT stands for cognitive behavioural therapy, a treatment that has been scientifically tested. It helps you understand and change thoughts, feelings and behaviours that stand in the way of your well-being."],
  ["1 200 kr","SEK 1,200"],["per samtal. Ingen remiss och ingen kö.","per session. No referral and no queue."],
@@ -688,7 +669,7 @@ const T = [
  ["Vad kostar det?","What does it cost?"],
  ["Hur avbokar jag?","How do I cancel?"],["Du avbokar genom att ringa oss på 044 - 18 85 80 eller mejla info@adaptus.se. Avbokningen behöver göras senast 24 timmar före ditt besök.","You cancel by calling us on 044 - 18 85 80 or emailing info@adaptus.se. Cancellations must be made at least 24 hours before your appointment."],
  ["Vad kostar det om jag inte avbokar?","What does it cost if I do not cancel?"],["Om du inte avbokar i tid eller inte kommer till ditt besök kostar det 1 200 kronor.","If you do not cancel in time or do not show up for your appointment, the fee is SEK 1,200."],["Ett samtal kostar 1 200 kronor.","One session costs SEK 1,200."],
- ["Vad händer när jag har skickat mejlet?","What happens after I have sent the email?"],["Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.","We get in touch with you and tell you how to get started. You can also call us on 044 - 18 85 80."],
+ ["Vad händer när jag har skickat formuläret?","What happens after I have sent the form?"],["Vi hör av oss till dig och berättar hur du kommer igång. Du kan också ringa oss på 044 - 18 85 80.","We get in touch with you and tell you how to get started. You can also call us on 044 - 18 85 80."],
  ["Det är första gången jag söker hjälp. Är det okej att vara osäker?","This is my first time seeking help. Is it okay to be unsure?"],["Ja. Det är helt okej att vara osäker på vilken hjälp du behöver. Allt du berättar behandlas konfidentiellt.","Yes. It is completely fine to be unsure about what help you need. Everything you tell us is treated confidentially."],
  ["Kan jag ringa eller mejla i stället?","Can I call or email instead?"],["Ja. Ring oss på 044 - 18 85 80 eller mejla info@adaptus.se.","Yes. Call us on 044 - 18 85 80 or email info@adaptus.se."],
  ["Redo att ta första steget?","Ready to take <b>the first step?</b>"],["Välkommen att boka en tid när du är redo.","You are welcome to book an appointment when you are ready."],
@@ -852,38 +833,25 @@ let start='sv';
 try{start=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'sv'}catch(e){}
 if(start==='en')setLang('en',false);
 
-/* ===== Bokning via mejl ===== */
+/* ===== Bokningsformulär ===== */
 (function(){
-  const link=document.getElementById('mejla'); if(!link)return;
-  const LINE='----------------------------------------';
-  const sec=(title,rows)=>[LINE,title,LINE,...Array(rows).fill(''),''];
-  const MAIL={
-    sv:{subject:'Bokningsförfrågan privat KBT',
-        body:['Hej!','','Jag vill boka ett första samtal hos Adaptus (privat KBT, utan remiss).','',
-              'Fyll i dina uppgifter på den tomma raden under varje rubrik. Ta inte bort rubrikerna.','','',
-              ...sec('1. NAMN (för- och efternamn)',3),
-              ...sec('2. TELEFONNUMMER',3),
-              ...sec('3. PERSONNUMMER (ÅÅÅÅMMDD-XXXX)',3),
-              ...sec('4. VAD GÄLLER ÄRENDET?\r\n(skriv kort med egna ord, till exempel oro, nedstämdhet eller stress)',3),
-              ...sec('5. ÖNSKADE DAGAR ELLER TIDER (valfritt)',3),
-              LINE,'','Vänliga hälsningar']},
-    en:{subject:'Booking request private CBT',
-        body:['Hello,','','I would like to book a first appointment at Adaptus (private CBT, no referral).','',
-              'Please fill in your details on the empty line under each heading. Do not delete the headings.','','',
-              ...sec('1. NAME (first and last name)',3),
-              ...sec('2. PHONE NUMBER',3),
-              ...sec('3. PERSONAL IDENTITY NUMBER (YYYYMMDD-XXXX)',3),
-              ...sec('4. WHAT IS YOUR ENQUIRY ABOUT?\r\n(briefly, in your own words, for example worry, low mood or stress)',3),
-              ...sec('5. PREFERRED DAYS OR TIMES (optional)',3),
-              LINE,'','Kind regards']}};
-  function build(){
-    const m=MAIL[document.documentElement.lang==='en'?'en':'sv'];
-    link.href='mailto:info@adaptus.se?subject='+encodeURIComponent(m.subject)+'&body='+encodeURIComponent(m.body.join('\r\n'));
-  }
-  build();
-  link.addEventListener('click',build);
-  link.addEventListener('focus',build);
-  link.addEventListener('mouseenter',build);
+  const form=document.getElementById('bokning'); if(!form)return;
+  const status=form.querySelector('.form-status'), btn=form.querySelector('button[type=submit]');
+  const M={sv:{preview:'Förhandsvisning: formuläret är inte kopplat till något system än och skickar inget.',ok:'Tack! Vi har tagit emot din förfrågan och hör av oss.',err:'Något gick fel. Försök igen eller ring oss på 044 - 18 85 80.',sending:'Skickar…'},
+           en:{preview:'Preview: the form is not connected to any system yet and sends nothing.',ok:'Thank you! We have received your request and will get in touch.',err:'Something went wrong. Please try again or call us on 044 - 18 85 80.',sending:'Sending…'}};
+  const say=k=>{status.hidden=false;status.textContent=M[document.documentElement.lang==='en'?'en':'sv'][k]};
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return}
+    if(form.website&&form.website.value)return;               // skräppost
+    if(form.sida)form.sida.value=location.href;
+    const ep=form.dataset.endpoint;
+    if(!ep){say('preview');return}
+    btn.disabled=true;say('sending');
+    try{const r=await fetch(ep,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      if(!r.ok)throw 0;form.reset();say('ok')}catch(_){say('err')}
+    btn.disabled=false;
+  });
 })();
 </script>
 </body>
